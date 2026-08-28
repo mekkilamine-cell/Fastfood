@@ -1,0 +1,2030 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>URBAN FOOD | Menu Digital</title>
+
+
+    <!-- POLICES -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ====================================================== */
+
+        :root {
+
+            --bg: #0b0b0b;
+
+            --card: #151515;
+
+            --card-hover: #1d1d1d;
+
+            --white: #ffffff;
+
+            --gray: #999999;
+
+            --accent: #ffb000;
+
+            --border: rgba(255,255,255,0.09);
+
+            --radius: 20px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            background: var(--bg);
+
+            color: var(--white);
+
+            font-family: "DM Sans", sans-serif;
+
+            min-height: 100vh;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            background: rgba(11,11,11,0.94);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .header-inner {
+
+            max-width: 1450px;
+
+            margin: auto;
+
+            padding: 18px 30px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .logo {
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 26px;
+
+            font-weight: 900;
+        }
+
+
+        .logo span {
+
+            color: var(--accent);
+        }
+
+
+        .restaurant-status {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+
+        .status-dot {
+
+            width: 9px;
+
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: #35d879;
+
+            box-shadow: 0 0 12px #35d879;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            max-width: 1450px;
+
+            margin: 25px auto 0;
+
+            padding: 0 30px;
+        }
+
+
+        .hero-box {
+
+            min-height: 350px;
+
+            border-radius: 27px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.95),
+                    rgba(0,0,0,.65),
+                    rgba(0,0,0,.10)
+                ),
+
+                url("https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1800&q=90")
+
+                center / cover;
+        }
+
+
+        .hero-content {
+
+            padding: 55px;
+
+            max-width: 700px;
+        }
+
+
+        .hero-small {
+
+            color: var(--accent);
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .hero-title {
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: clamp(45px, 6vw, 75px);
+
+            line-height: .95;
+
+            font-weight: 900;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-title span {
+
+            color: var(--accent);
+        }
+
+
+        .hero-text {
+
+            color: #d0d0d0;
+
+            line-height: 1.7;
+
+            max-width: 520px;
+
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
+           CATÉGORIES
+        ====================================================== */
+
+        .categories {
+
+            max-width: 1450px;
+
+            margin: 30px auto;
+
+            padding: 0 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .category-btn {
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--gray);
+
+            border-radius: 50px;
+
+            padding: 12px 20px;
+
+            font-family: inherit;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .25s;
+        }
+
+
+        .category-btn:hover {
+
+            border-color: var(--accent);
+
+            color: white;
+        }
+
+
+        .category-btn.active {
+
+            background: var(--accent);
+
+            color: #111;
+
+            border-color: var(--accent);
+        }
+
+
+        /* =====================================================
+           MENU
+        ====================================================== */
+
+        .menu {
+
+            max-width: 1450px;
+
+            margin: auto;
+
+            padding: 0 30px 80px;
+        }
+
+
+        .menu-heading {
+
+            margin: 40px 0 25px;
+        }
+
+
+        .menu-heading h2 {
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 35px;
+
+            font-weight: 900;
+        }
+
+
+        .menu-heading p {
+
+            color: var(--gray);
+
+            margin-top: 5px;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           PRODUITS
+        ====================================================== */
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .product-card {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            transition: .3s;
+
+            animation: appear .4s ease both;
+        }
+
+
+        .product-card:hover {
+
+            transform: translateY(-6px);
+
+            background: var(--card-hover);
+
+            border-color: rgba(255,176,0,.3);
+        }
+
+
+        /* =====================================================
+           IMAGE
+        ====================================================== */
+
+        .product-image {
+
+            height: 230px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            cursor: zoom-in;
+        }
+
+
+        .product-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform .5s ease;
+        }
+
+
+        .product-image:hover img {
+
+            transform: scale(1.08);
+        }
+
+
+        .zoom-label {
+
+            position: absolute;
+
+            bottom: 14px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: rgba(0,0,0,.78);
+
+            color: white;
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            opacity: 0;
+
+            transition: .25s;
+
+            white-space: nowrap;
+
+            pointer-events: none;
+        }
+
+
+        .product-image:hover .zoom-label {
+
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           BADGE
+        ====================================================== */
+
+        .badge {
+
+            position: absolute;
+
+            top: 14px;
+
+            left: 14px;
+
+            background: rgba(0,0,0,.8);
+
+            color: var(--accent);
+
+            padding: 7px 11px;
+
+            border-radius: 30px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           INFORMATIONS
+        ====================================================== */
+
+        .product-info {
+
+            padding: 20px;
+        }
+
+
+        .product-name {
+
+            font-size: 19px;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+
+        .product-description {
+
+            color: var(--gray);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            min-height: 42px;
+        }
+
+
+        .product-bottom {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            margin-top: 18px;
+        }
+
+
+        .product-price {
+
+            color: var(--accent);
+
+            font-size: 23px;
+
+            font-weight: 900;
+        }
+
+
+        .product-price small {
+
+            color: var(--gray);
+
+            font-size: 12px;
+
+            margin-left: 3px;
+        }
+
+
+        /* =====================================================
+           MODALE
+        ====================================================== */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            background: rgba(0,0,0,.92);
+
+            backdrop-filter: blur(15px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 25px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition: opacity .25s ease;
+        }
+
+
+        .modal.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+
+        /* =====================================================
+           CONTENU MODALE
+        ====================================================== */
+
+        .modal-box {
+
+            width: 100%;
+
+            max-width: 850px;
+
+            text-align: center;
+
+            transform: scale(.9);
+
+            transition: transform .3s ease;
+        }
+
+
+        .modal.active .modal-box {
+
+            transform: scale(1);
+        }
+
+
+        .modal-photo {
+
+            width: 100%;
+
+            max-height: 68vh;
+
+            object-fit: contain;
+
+            border-radius: 20px;
+
+            display: block;
+
+            box-shadow: 0 25px 80px rgba(0,0,0,.6);
+        }
+
+
+        .modal-name {
+
+            font-family: "Montserrat", sans-serif;
+
+            font-size: 30px;
+
+            font-weight: 900;
+
+            margin-top: 18px;
+        }
+
+
+        .modal-description {
+
+            color: #bcbcbc;
+
+            font-size: 14px;
+
+            margin-top: 7px;
+        }
+
+
+        .modal-price {
+
+            color: var(--accent);
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            margin-top: 9px;
+        }
+
+
+        /* =====================================================
+           BOUTON FERMER
+        ====================================================== */
+
+        .close-modal {
+
+            position: fixed;
+
+            top: 20px;
+
+            right: 25px;
+
+            width: 48px;
+
+            height: 48px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.12);
+
+            color: white;
+
+            font-size: 30px;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+
+        .close-modal:hover {
+
+            background: var(--accent);
+
+            color: #111;
+
+            transform: rotate(90deg);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: var(--gray);
+
+            font-size: 13px;
+        }
+
+
+        footer strong {
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           ANIMATION
+        ====================================================== */
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(15px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           TABLETTE
+        ====================================================== */
+
+        @media (max-width: 1100px) {
+
+            .products {
+
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .products {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .hero-box {
+
+                min-height: 380px;
+            }
+
+
+            .hero-content {
+
+                padding: 40px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            .header-inner {
+
+                padding: 15px 18px;
+            }
+
+
+            .logo {
+
+                font-size: 22px;
+            }
+
+
+            .restaurant-status {
+
+                display: none;
+            }
+
+
+            .hero {
+
+                padding: 0 15px;
+
+                margin-top: 15px;
+            }
+
+
+            .hero-box {
+
+                min-height: 430px;
+
+                border-radius: 20px;
+            }
+
+
+            .hero-content {
+
+                padding: 30px 25px;
+            }
+
+
+            .hero-title {
+
+                font-size: 45px;
+            }
+
+
+            .categories {
+
+                justify-content: flex-start;
+
+                flex-wrap: nowrap;
+
+                overflow-x: auto;
+
+                padding: 0 15px;
+
+                scrollbar-width: none;
+            }
+
+
+            .categories::-webkit-scrollbar {
+
+                display: none;
+            }
+
+
+            .category-btn {
+
+                flex-shrink: 0;
+            }
+
+
+            .menu {
+
+                padding: 0 15px 60px;
+            }
+
+
+            .menu-heading h2 {
+
+                font-size: 28px;
+            }
+
+
+            .products {
+
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+            }
+
+
+            .product-image {
+
+                height: 250px;
+            }
+
+
+            .modal {
+
+                padding: 15px;
+            }
+
+
+            .modal-photo {
+
+                max-height: 60vh;
+
+                border-radius: 15px;
+            }
+
+
+            .modal-name {
+
+                font-size: 24px;
+            }
+
+
+            .close-modal {
+
+                top: 12px;
+
+                right: 15px;
+
+                width: 43px;
+
+                height: 43px;
+
+                font-size: 26px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="header-inner">
+
+
+            <div class="logo">
+
+                URBAN<span>FOOD</span>
+
+            </div>
+
+
+            <div class="restaurant-status">
+
+                <span class="status-dot"></span>
+
+                Ouvert aujourd'hui
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-box">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-small">
+
+                    Fast Food • Grill • Pizza
+
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    MANGEZ<br>
+
+                    <span>BIEN.</span>
+
+                </h1>
+
+
+                <p class="hero-text">
+
+                    Des produits généreux,
+                    des ingrédients frais et
+                    des recettes préparées avec passion.
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CATÉGORIES
+    ====================================================== -->
+
+    <nav class="categories">
+
+
+        <button
+            class="category-btn active"
+            data-category="Burgers"
+        >
+
+            🍔 Burgers
+
+        </button>
+
+
+        <button
+            class="category-btn"
+            data-category="Pizzas"
+        >
+
+            🍕 Pizzas
+
+        </button>
+
+
+        <button
+            class="category-btn"
+            data-category="Tacos"
+        >
+
+            🌯 Tacos
+
+        </button>
+
+
+        <button
+            class="category-btn"
+            data-category="Plats"
+        >
+
+            🍽️ Plats
+
+        </button>
+
+
+        <button
+            class="category-btn"
+            data-category="Desserts"
+        >
+
+            🍰 Desserts
+
+        </button>
+
+
+        <button
+            class="category-btn"
+            data-category="Boissons"
+        >
+
+            🥤 Boissons
+
+        </button>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
+
+    <main class="menu">
+
+
+        <div class="menu-heading">
+
+
+            <h2 id="category-title">
+
+                Burgers
+
+            </h2>
+
+
+            <p>
+
+                Découvrez nos spécialités
+
+            </p>
+
+
+        </div>
+
+
+        <div
+            class="products"
+            id="products"
+        ></div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MODALE PHOTO
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="modal"
+    >
+
+
+        <button
+            class="close-modal"
+            id="close-modal"
+            aria-label="Fermer"
+        >
+
+            ×
+
+        </button>
+
+
+        <div class="modal-box">
+
+
+            <img
+                class="modal-photo"
+                id="modal-photo"
+                src=""
+                alt=""
+            >
+
+
+            <h2
+                class="modal-name"
+                id="modal-name"
+            ></h2>
+
+
+            <p
+                class="modal-description"
+                id="modal-description"
+            ></p>
+
+
+            <div
+                class="modal-price"
+                id="modal-price"
+            ></div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <strong>URBANFOOD</strong>
+
+        <br>
+
+        Menu Digital
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           PRODUITS
+        ====================================================== */
+
+        const products = [
+
+            /* ---------------- BURGERS ---------------- */
+
+            {
+                name: "Classic Burger",
+
+                category: "Burgers",
+
+                price: 850,
+
+                description:
+                    "Steak haché, cheddar, salade, tomate et sauce maison.",
+
+                badge: "BEST SELLER",
+
+                image:
+                    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Double Cheese",
+
+                category: "Burgers",
+
+                price: 1100,
+
+                description:
+                    "Double steak, double cheddar, oignons et sauce spéciale.",
+
+                badge: "POPULAIRE",
+
+                image:
+                    "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Chicken Burger",
+
+                category: "Burgers",
+
+                price: 900,
+
+                description:
+                    "Poulet croustillant, salade fraîche et sauce crémeuse.",
+
+                badge: "",
+
+                image:
+                    "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Truffle Burger",
+
+                category: "Burgers",
+
+                price: 1400,
+
+                description:
+                    "Steak grillé, cheddar et crème de truffe.",
+
+                badge: "PREMIUM",
+
+                image:
+                    "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            /* ---------------- PIZZAS ---------------- */
+
+            {
+                name: "Margherita",
+
+                category: "Pizzas",
+
+                price: 750,
+
+                description:
+                    "Tomate, mozzarella, basilic frais et huile d'olive.",
+
+                badge: "CLASSIQUE",
+
+                image:
+                    "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Pepperoni",
+
+                category: "Pizzas",
+
+                price: 950,
+
+                description:
+                    "Tomate, mozzarella, pepperoni et origan.",
+
+                badge: "BEST SELLER",
+
+                image:
+                    "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Pizza Poulet",
+
+                category: "Pizzas",
+
+                price: 1000,
+
+                description:
+                    "Poulet grillé, mozzarella, champignons et sauce maison.",
+
+                badge: "",
+
+                image:
+                    "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Quatre Fromages",
+
+                category: "Pizzas",
+
+                price: 1100,
+
+                description:
+                    "Mozzarella, parmesan, gorgonzola et fromage fondant.",
+
+                badge: "GOURMET",
+
+                image:
+                    "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            /* ---------------- TACOS ---------------- */
+
+            {
+                name: "Tacos Poulet",
+
+                category: "Tacos",
+
+                price: 900,
+
+                description:
+                    "Poulet, frites, fromage et sauce fromagère.",
+
+                badge: "NOUVEAU",
+
+                image:
+                    "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Tacos Viande",
+
+                category: "Tacos",
+
+                price: 1050,
+
+                description:
+                    "Viande grillée, frites, fromage et sauce maison.",
+
+                badge: "",
+
+                image:
+                    "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Tacos Mixte",
+
+                category: "Tacos",
+
+                price: 1200,
+
+                description:
+                    "Poulet et viande, fromage, frites et sauce spéciale.",
+
+                badge: "POPULAIRE",
+
+                image:
+                    "https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            /* ---------------- PLATS ---------------- */
+
+            {
+                name: "Pasta Cream",
+
+                category: "Plats",
+
+                price: 1000,
+
+                description:
+                    "Pâtes, crème, parmesan et champignons frais.",
+
+                badge: "CHEF",
+
+                image:
+                    "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Steak Grillé",
+
+                category: "Plats",
+
+                price: 1500,
+
+                description:
+                    "Steak grillé, pommes de terre et sauce au poivre.",
+
+                badge: "",
+
+                image:
+                    "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            /* ---------------- DESSERTS ---------------- */
+
+            {
+                name: "Fondant Chocolat",
+
+                category: "Desserts",
+
+                price: 500,
+
+                description:
+                    "Gâteau au chocolat noir et crème.",
+
+                badge: "GOURMAND",
+
+                image:
+                    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Tiramisu",
+
+                category: "Desserts",
+
+                price: 550,
+
+                description:
+                    "Mascarpone, café, cacao et biscuit italien.",
+
+                badge: "",
+
+                image:
+                    "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            /* ---------------- BOISSONS ---------------- */
+
+            {
+                name: "Limonade Fraîche",
+
+                category: "Boissons",
+
+                price: 300,
+
+                description:
+                    "Citron frais, menthe et eau pétillante.",
+
+                badge: "FRAIS",
+
+                image:
+                    "https://images.unsplash.com/photo-1523677011781-c91d1bbe2f9e?auto=format&fit=crop&w=900&q=90"
+            },
+
+
+            {
+                name: "Iced Coffee",
+
+                category: "Boissons",
+
+                price: 400,
+
+                description:
+                    "Espresso, lait froid et glaçons.",
+
+                badge: "",
+
+                image:
+                    "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=90"
+            }
+
+        ];
+
+
+
+        /* =====================================================
+           RÉCUPÉRER LES ÉLÉMENTS HTML
+        ====================================================== */
+
+        const productsContainer =
+            document.getElementById("products");
+
+
+        const categoryTitle =
+            document.getElementById("category-title");
+
+
+        const buttons =
+            document.querySelectorAll(".category-btn");
+
+
+        const modal =
+            document.getElementById("modal");
+
+
+        const modalPhoto =
+            document.getElementById("modal-photo");
+
+
+        const modalName =
+            document.getElementById("modal-name");
+
+
+        const modalDescription =
+            document.getElementById("modal-description");
+
+
+        const modalPrice =
+            document.getElementById("modal-price");
+
+
+        const closeModalButton =
+            document.getElementById("close-modal");
+
+
+
+        /* =====================================================
+           AFFICHER LES PRODUITS
+        ====================================================== */
+
+        function displayProducts(category) {
+
+
+            productsContainer.innerHTML = "";
+
+
+            const filtered =
+                products.filter(
+                    product =>
+                        product.category === category
+                );
+
+
+            filtered.forEach(
+                (product, index) => {
+
+
+                    const card =
+                        document.createElement("article");
+
+
+                    card.className =
+                        "product-card";
+
+
+                    card.style.animationDelay =
+                        `${index * 0.06}s`;
+
+
+                    /* -----------------------------------------
+                       IMAGE
+                    ------------------------------------------ */
+
+                    const imageContainer =
+                        document.createElement("div");
+
+
+                    imageContainer.className =
+                        "product-image";
+
+
+                    imageContainer.setAttribute(
+                        "role",
+                        "button"
+                    );
+
+
+                    imageContainer.setAttribute(
+                        "tabindex",
+                        "0"
+                    );
+
+
+                    /* -----------------------------------------
+                       IMAGE
+                    ------------------------------------------ */
+
+                    const image =
+                        document.createElement("img");
+
+
+                    image.src =
+                        product.image;
+
+
+                    image.alt =
+                        product.name;
+
+
+                    image.loading =
+                        "lazy";
+
+
+                    /* -----------------------------------------
+                       TEXTE ZOOM
+                    ------------------------------------------ */
+
+                    const zoom =
+                        document.createElement("div");
+
+
+                    zoom.className =
+                        "zoom-label";
+
+
+                    zoom.textContent =
+                        "Cliquer pour agrandir";
+
+
+                    /* -----------------------------------------
+                       BADGE
+                    ------------------------------------------ */
+
+                    if (product.badge) {
+
+                        const badge =
+                            document.createElement("div");
+
+
+                        badge.className =
+                            "badge";
+
+
+                        badge.textContent =
+                            product.badge;
+
+
+                        imageContainer.appendChild(
+                            badge
+                        );
+                    }
+
+
+                    imageContainer.appendChild(image);
+
+                    imageContainer.appendChild(zoom);
+
+
+                    /* -----------------------------------------
+                       CONTENU
+                    ------------------------------------------ */
+
+                    const info =
+                        document.createElement("div");
+
+
+                    info.className =
+                        "product-info";
+
+
+                    const name =
+                        document.createElement("h3");
+
+
+                    name.className =
+                        "product-name";
+
+
+                    name.textContent =
+                        product.name;
+
+
+                    const description =
+                        document.createElement("p");
+
+
+                    description.className =
+                        "product-description";
+
+
+                    description.textContent =
+                        product.description;
+
+
+                    const bottom =
+                        document.createElement("div");
+
+
+                    bottom.className =
+                        "product-bottom";
+
+
+                    const price =
+                        document.createElement("div");
+
+
+                    price.className =
+                        "product-price";
+
+
+                    price.innerHTML =
+                        product.price.toLocaleString("fr-FR")
+                        +
+                        ' <small>DA</small>';
+
+
+                    bottom.appendChild(price);
+
+
+                    info.appendChild(name);
+
+                    info.appendChild(description);
+
+                    info.appendChild(bottom);
+
+
+                    /* -----------------------------------------
+                       CONSTRUIRE LA CARTE
+                    ------------------------------------------ */
+
+                    card.appendChild(imageContainer);
+
+                    card.appendChild(info);
+
+
+                    productsContainer.appendChild(card);
+
+
+
+                    /* -----------------------------------------
+                       CLIC SUR LA PHOTO
+                    ------------------------------------------ */
+
+                    imageContainer.addEventListener(
+                        "click",
+                        function() {
+
+                            openModal(product);
+
+                        }
+                    );
+
+
+                    /* -----------------------------------------
+                       CLAVIER
+                    ------------------------------------------ */
+
+                    imageContainer.addEventListener(
+                        "keydown",
+                        function(event) {
+
+                            if (
+                                event.key === "Enter" ||
+                                event.key === " "
+                            ) {
+
+                                event.preventDefault();
+
+                                openModal(product);
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           OUVRIR LA PHOTO
+        ====================================================== */
+
+        function openModal(product) {
+
+
+            /*
+                Mettre la photo
+            */
+
+            modalPhoto.src =
+                product.image;
+
+
+            /*
+                Mettre le nom
+            */
+
+            modalName.textContent =
+                product.name;
+
+
+            /*
+                Mettre la description
+            */
+
+            modalDescription.textContent =
+                product.description;
+
+
+            /*
+                Mettre le prix
+            */
+
+            modalPrice.textContent =
+                product.price.toLocaleString("fr-FR")
+                +
+                " DA";
+
+
+            /*
+                Afficher la fenêtre
+            */
+
+            modal.classList.add("active");
+
+
+            /*
+                Bloquer le scroll
+            */
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+
+        /* =====================================================
+           FERMER LA PHOTO
+        ====================================================== */
+
+        function closeModal() {
+
+
+            modal.classList.remove("active");
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+
+        /* =====================================================
+           BOUTON X
+        ====================================================== */
+
+        closeModalButton.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+                closeModal();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           CLIQUER EN DEHORS DE LA PHOTO
+        ====================================================== */
+
+        modal.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    event.target === modal
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           TOUCHE ESCAPE
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           CATÉGORIES
+        ====================================================== */
+
+        buttons.forEach(
+            function(button) {
+
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+
+                        /*
+                            Enlever active
+                        */
+
+                        buttons.forEach(
+                            function(btn) {
+
+                                btn.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        /*
+                            Activer le bouton
+                        */
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        /*
+                            Récupérer catégorie
+                        */
+
+                        const category =
+                            button.dataset.category;
+
+
+                        /*
+                            Modifier titre
+                        */
+
+                        categoryTitle.textContent =
+                            category;
+
+
+                        /*
+                            Afficher produits
+                        */
+
+                        displayProducts(
+                            category
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           AFFICHAGE INITIAL
+        ====================================================== */
+
+        displayProducts("Burgers");
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
